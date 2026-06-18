@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Utensils } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ view, setView }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -31,9 +31,19 @@ export default function Navbar() {
   const handleScrollTo = (e, id) => {
     e.preventDefault();
     setIsOpen(false);
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (view !== 'home') {
+      setView('home');
+      setTimeout(() => {
+        const element = document.querySelector(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.querySelector(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -52,16 +62,18 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-primary-light group-hover:bg-gold transition-colors duration-300">
-                <Utensils className="w-5 h-5 text-gold group-hover:text-primary-dark transition-colors duration-300" />
-              </div>
+            <a href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="flex items-center gap-3 group">
+              <img 
+                src="/images/logo.png" 
+                alt="Kanary Restaurant Logo" 
+                className="w-16 h-16 object-contain"
+              />
               <div className="flex flex-col">
-                <span className="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white group-hover:text-gold transition-colors duration-300">
-                  SPICE GARDEN
+                <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-white group-hover:text-gold transition-colors duration-300">
+                  KANARY
                 </span>
-                <span className="text-[10px] tracking-[0.25em] text-gold uppercase -mt-1 font-sans">
-                  Kerala Restaurant
+                <span className="text-[11px] tracking-[0.25em] text-gold uppercase -mt-1 font-sans">
+                  Restaurant
                 </span>
               </div>
             </a>

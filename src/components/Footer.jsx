@@ -62,21 +62,23 @@ export default function Footer() {
           
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <a href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="flex items-center gap-2 group">
-              <div className="w-9 h-9 rounded-full border border-gold flex items-center justify-center bg-primary-light">
-                <Utensils className="w-4 h-4 text-gold" />
-              </div>
+            <a href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="flex items-center gap-3 group">
+              <img 
+                src="/images/logo.png" 
+                alt="Kanary Restaurant Logo" 
+                className="w-16 h-16 object-contain"
+              />
               <div className="flex flex-col text-left">
-                <span className="font-serif text-lg sm:text-xl font-bold tracking-wide text-white group-hover:text-gold transition-colors duration-300">
-                  SPICE GARDEN
+                <span className="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white group-hover:text-gold transition-colors duration-300">
+                  KANARY
                 </span>
-                <span className="text-[9px] tracking-[0.25em] text-gold uppercase -mt-1 font-sans">
-                  Kerala Restaurant
+                <span className="text-[10px] tracking-[0.25em] text-gold uppercase -mt-1 font-sans">
+                  Restaurant
                 </span>
               </div>
             </a>
             <p className="text-gray-400 text-xs sm:text-sm max-w-xs leading-relaxed mt-2">
-              Serving the authentic spices and rich culinary heritage of Kerala with premium hospitality since 2018.
+              Thrissur's premier multi-cuisine dining experience, serving authentic culinary delicacies made with premium A2 milk and ghee since 2018.
             </p>
           </div>
 
@@ -96,7 +98,7 @@ export default function Footer() {
             </div>
             <div className="w-16 h-[1px] bg-gold/20" />
             <span className="text-gold font-sans text-xs tracking-widest font-semibold uppercase">
-              Monday – Sunday | 11:00 AM – 11:00 PM
+              Monday – Sunday | 8:00 AM – 1:00 AM
             </span>
           </div>
 
@@ -133,7 +135,7 @@ export default function Footer() {
         {/* Bottom copyright and policies */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>
-            Copyright ©️ 2026 Spice Garden Restaurant. All rights reserved.
+            Copyright ©️ 2026 Kanary Restaurant. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#privacy" className="hover:text-gold transition-colors">Privacy Policy</a>

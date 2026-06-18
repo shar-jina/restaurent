@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           </h2>
           <div className="w-20 h-1 bg-gold mx-auto" />
           <p className="text-gray-300 font-sans text-sm sm:text-base">
-            For years, we have set the benchmark for authentic dining in Kochi. Here is why our customers keep coming back.
+            For years, we have set the benchmark for authentic multi-cuisine dining in Thrissur. Here is why our customers keep coming back.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
                 Experience It Yourself
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Join us for lunch or dinner to taste the true legacy of Kerala cooking. Reserve your table in seconds.
+                Join us for lunch or dinner to taste the true legacy of premium multi-cuisine cooking. Reserve your table in seconds.
               </p>
             </div>
 

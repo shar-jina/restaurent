@@ -76,10 +76,14 @@ export default function Reviews() {
   };
 
   return (
-    <section id="reviews" className="py-24 bg-primary-bg relative overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-gold/5 rounded-full filter blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-light/10 rounded-full filter blur-3xl pointer-events-none" />
+    <section 
+      id="reviews" 
+      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/dining_experience.png')" }}
+    >
+      {/* Heavy dark luxury overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/95 via-primary-bg/85 to-primary-bg/95 backdrop-blur-[3px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

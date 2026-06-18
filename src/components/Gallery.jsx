@@ -90,7 +90,7 @@ export default function Gallery() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-gold font-sans font-semibold tracking-widest text-sm uppercase block">VISUAL JOURNEY</span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Spice Garden Gallery
+            Kanary Restaurant Gallery
           </h2>
           <div className="w-20 h-1 bg-gold mx-auto" />
           <p className="text-gray-300 font-sans text-sm sm:text-base">

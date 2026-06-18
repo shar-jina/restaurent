@@ -6,28 +6,28 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Our Location',
-      details: '123 MG Road, Kochi, Kerala, India - 682016',
-      link: 'https://maps.google.com/?q=123+MG+Road+Kochi+Kerala',
+      details: 'Brahmaswom Madam Building, MG Road, Thrissur, Kerala - 680001',
+      link: 'https://maps.google.com/?q=Kanary+Restaurant+MG+Road+Thrissur',
       actionText: 'Get Directions',
     },
     {
       icon: Phone,
       title: 'Phone Number',
-      details: '+91 98765 43210',
-      link: 'tel:+919876543210',
+      details: '+91 70456 71111',
+      link: 'tel:+917045671111',
       actionText: 'Call Now',
     },
     {
       icon: Mail,
       title: 'Email Address',
-      details: 'info@spicegarden.com',
-      link: 'mailto:info@spicegarden.com',
+      details: 'info@kanaryrestaurant.com',
+      link: 'mailto:info@kanaryrestaurant.com',
       actionText: 'Send Email',
     },
     {
       icon: Clock,
       title: 'Opening Hours',
-      details: 'Monday – Sunday: 11:00 AM – 11:00 PM',
+      details: 'Monday – Sunday: 8:00 AM – 1:00 AM',
       link: null,
       actionText: 'Open All Week',
     },
@@ -47,7 +47,7 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-gold mx-auto" />
           <p className="text-gray-300 font-sans text-sm sm:text-base">
-            We are conveniently located in the heart of Kochi. Come visit us or reach out for catering inquiries and reservations.
+            We are located in the heart of Thrissur. Visit us at any of our branches or reach out for catering inquiries and reservations.
           </p>
         </div>
 
@@ -103,14 +103,14 @@ export default function Contact() {
             className="lg:col-span-7 h-[450px] lg:h-auto min-h-[350px] rounded-3xl overflow-hidden border border-gold/25 shadow-2xl relative bg-primary-dark"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m2!1m3!1m2!1s0x3b080d514abec6bf%3A0xbd582ab58447ec2!2sM.G.%20Road%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682016%2C%20India!8m2!3d9.9749176!4d76.2818987!3m4!1s0x3b080d514abec6bf%3A0xbd582ab58447ec2!2sM.G.%20Road%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682016%2C%20India!5e0!3m2!1sen!2sin!4v1718544000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.59345719908!2d76.21272717596001!3d10.524816989609272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ee3bd1987d69%3A0x6d97c555d496a792!2sKanary%20Restaurant!5e0!3m2!1sen!2sin!4v1718544000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Spice Garden Restaurant Google Maps Location"
+              title="Kanary Restaurant Google Maps Location"
               className="absolute inset-0"
             />
           </motion.div>

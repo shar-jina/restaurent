@@ -28,7 +28,7 @@ export default function Reservation() {
 
   const generateBookingRef = () => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let ref = 'SG-';
+    let ref = 'KN-';
     for (let i = 0; i < 5; i++) {
       ref += chars.charAt(Math.floor(Math.random() * chars.length));
     }
@@ -48,7 +48,7 @@ export default function Reservation() {
 
   // Generate pre-filled WhatsApp link
   const getWhatsAppLink = () => {
-    const message = `*Spice Garden Reservation Request*
+    const message = `*Kanary Restaurant Reservation Request*
 Reference: ${bookingRef}
 Name: ${formData.name}
 Phone: ${formData.phone}
@@ -58,13 +58,13 @@ Time: ${formData.time}
 Seating: ${formData.preference}
 Notes: ${formData.notes || 'None'}`;
     
-    return `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/917045671111?text=${encodeURIComponent(message)}`;
   };
 
   // Generate pre-filled Mailto link
   const getMailLink = () => {
     const subject = `Reservation Request - ${bookingRef}`;
-    const body = `Spice Garden Reservation Details:
+    const body = `Kanary Restaurant Reservation Details:
 ------------------------------------------
 Reference Code: ${bookingRef}
 Guest Name: ${formData.name}
@@ -75,7 +75,7 @@ Reservation Time: ${formData.time}
 Seating Preference: ${formData.preference}
 Special Notes: ${formData.notes || 'None'}`;
 
-    return `mailto:info@spicegarden.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:info@kanaryrestaurant.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleReset = () => {
