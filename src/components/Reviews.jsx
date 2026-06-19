@@ -78,11 +78,11 @@ export default function Reviews() {
   return (
     <section 
       id="reviews" 
-      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
       style={{ backgroundImage: "url('/images/dining_experience.png')" }}
     >
       {/* Heavy dark luxury overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/95 via-primary-bg/85 to-primary-bg/95 backdrop-blur-[3px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/50 via-primary-bg/20 to-primary-bg/50 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -106,7 +106,7 @@ export default function Reviews() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="glass-panel p-8 sm:p-12 rounded-3xl border border-gold/25 w-full text-center relative shadow-2xl"
+              className="bg-primary-dark/85 backdrop-blur-md p-8 sm:p-12 rounded-3xl border border-gold/25 w-full text-center relative shadow-2xl"
             >
               {/* Quote Icon */}
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gold flex items-center justify-center shadow-lg border border-primary-dark">

@@ -18,13 +18,13 @@ export default function Hero() {
           loop 
           muted 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover scale-105"
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/video/hero_bg.mp4" type="video/mp4" />
+          <source src="/video/hero_bg1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-bg/95 via-primary-bg/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-transparent to-primary-bg/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-bg/60 via-primary-bg/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-bg/50 via-transparent to-primary-bg/20" />
       </div>
 
       {/* Floating Sparkles/Particles (ambient luxury effect) */}
@@ -67,7 +67,7 @@ export default function Hero() {
             Experience delicious food prepared with fresh ingredients and traditional recipes.
           </motion.p>
 
-          {/* Buttons */}
+          {/* Main Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,6 +89,58 @@ export default function Hero() {
               BOOK RESERVATION
               <CalendarDays className="w-5 h-5" />
             </button>
+          </motion.div>
+
+          {/* Quick Order Delivery Channels */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-8 pt-6 border-t border-white/10 max-w-xl"
+          >
+            <span className="text-gray-400 font-sans text-xs uppercase tracking-widest block mb-4">
+              Or Order Direct Online Via
+            </span>
+            <div className="flex flex-wrap gap-3">
+              {/* Zomato */}
+              <a 
+                href="https://www.zomato.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 bg-primary-dark/85 hover:bg-[#e23744]/10 border border-[#e23744]/30 hover:border-[#e23744] text-white hover:text-[#e23744] font-sans font-bold py-3 px-6 rounded-full text-xs tracking-wider transition-all duration-300 shadow-md cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                ZOMATO
+              </a>
+
+              {/* Swiggy */}
+              <a 
+                href="https://www.swiggy.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 bg-primary-dark/85 hover:bg-[#fc8019]/10 border border-[#fc8019]/30 hover:border-[#fc8019] text-white hover:text-[#fc8019] font-sans font-bold py-3 px-6 rounded-full text-xs tracking-wider transition-all duration-300 shadow-md cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                SWIGGY
+              </a>
+
+              {/* WhatsApp */}
+              <a 
+                href="https://wa.me/917045671111?text=Hi!%20I%20would%20like%20to%20place%20an%20order%20at%20Kanary%20Restaurant." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 bg-primary-dark/85 hover:bg-[#25d366]/10 border border-[#25d366]/30 hover:border-[#25d366] text-white hover:text-[#25d366] font-sans font-bold py-3 px-6 rounded-full text-xs tracking-wider transition-all duration-300 shadow-md cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <path d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2c-5.396 0-9.786 4.39-9.788 9.788 0 1.725.449 3.41 1.304 4.89L2 22l5.482-1.437a9.747 9.747 0 0 0 4.509 1.113h.004c5.396 0 9.79-4.394 9.792-9.792 0-2.617-1.02-5.078-2.871-6.928zM11.992 20.12h-.003a8.12 8.12 0 0 1-4.14-1.135l-.297-.176-3.078.807.82-3.002-.194-.308a8.093 8.093 0 0 1-1.246-4.341c.002-4.484 3.65-8.132 8.136-8.132a8.082 8.082 0 0 1 5.753 2.385 8.077 8.077 0 0 1 2.38 5.754c-.002 4.486-3.65 8.136-8.131 8.136zm4.46-6.096c-.244-.122-1.442-.712-1.666-.794-.223-.082-.385-.122-.548.122-.162.244-.63.794-.772.957-.142.162-.284.183-.528.061a6.643 6.643 0 0 1-1.957-1.206 7.324 7.324 0 0 1-1.354-1.685c-.142-.244-.015-.376.107-.497.11-.11.244-.285.366-.427.122-.142.163-.244.244-.407.082-.162.041-.305-.02-.427-.06-.122-.548-1.32-.751-1.808-.198-.477-.397-.412-.548-.42l-.467-.008c-.162 0-.427.061-.65.305-.224.244-.854.834-.854 2.034 0 1.2 1.34 2.455 1.48 2.618a10.82 10.82 0 0 0 4.116 3.642 13.9 13.9 0 0 0 1.373.508c.57.18 1.09.155 1.5.094.457-.068 1.442-.589 1.646-1.159.203-.57.203-1.057.142-1.159-.06-.102-.223-.163-.467-.285z"/>
+                </svg>
+                WHATSAPP
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
