@@ -1,6 +1,31 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import { Play, X, Utensils, Award, ChefHat, Users } from 'lucide-react';
+
+function AnimatedCounter({ value, suffix }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          setCount(Math.floor(latest));
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value]);
+
+  return (
+    <span ref={ref} className="font-serif text-4xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gold transition-colors duration-300">
+      {count.toLocaleString()}{suffix}
+    </span>
+  );
+}
 
 export default function PromoVideo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,25 +33,29 @@ export default function PromoVideo() {
   const stats = [
     {
       id: 1,
-      count: '1,500+',
+      count: 1500,
+      suffix: '+',
       label: 'Daily Orders',
       icon: Utensils,
     },
     {
       id: 2,
-      count: '80+',
+      count: 80,
+      suffix: '+',
       label: 'Special Foods',
       icon: ChefHat,
     },
     {
       id: 3,
-      count: '12+',
+      count: 12,
+      suffix: '+',
       label: 'Awards Won',
       icon: Award,
     },
     {
       id: 4,
-      count: '25+',
+      count: 25,
+      suffix: '+',
       label: 'Expert Chefs',
       icon: Users,
     },
@@ -84,9 +113,7 @@ export default function PromoVideo() {
             return (
               <div key={stat.id} className="relative flex flex-col items-center justify-center space-y-2 group">
                 {/* Stats Value */}
-                <span className="font-serif text-4xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gold transition-colors duration-300">
-                  {stat.count}
-                </span>
+                <AnimatedCounter value={stat.count} suffix={stat.suffix} />
                 
                 {/* Icon & Label */}
                 <div className="flex items-center gap-1.5 justify-center">
