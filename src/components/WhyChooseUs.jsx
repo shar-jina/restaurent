@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion';
 import { ChefHat, ShieldCheck, Timer, Leaf, Users, Calendar } from 'lucide-react';
 

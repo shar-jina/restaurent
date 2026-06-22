@@ -1,8 +1,10 @@
+"use client";
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Flame, ArrowLeft, Utensils } from 'lucide-react';
+import Link from 'next/link';
 
-export default function FullMenuPage({ setView }) {
+export default function FullMenuPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -229,16 +231,13 @@ export default function FullMenuPage({ setView }) {
 
         {/* Back to home trigger */}
         <div className="text-center">
-          <button
-            onClick={() => {
-              setView('home');
-              window.scrollTo({ top: 0, behavior: 'instant' });
-            }}
+          <Link
+            href="/"
             className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-primary-dark font-sans font-bold py-4 px-10 rounded-full text-sm tracking-wider transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.25)] cursor-pointer hover:-translate-y-0.5"
           >
             <ArrowLeft className="w-4 h-4" />
             BACK TO HOME
-          </button>
+          </Link>
         </div>
 
       </div>

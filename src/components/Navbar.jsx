@@ -1,10 +1,15 @@
+"use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Utensils } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
-export default function Navbar({ view, setView }) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,14 +36,8 @@ export default function Navbar({ view, setView }) {
   const handleScrollTo = (e, id) => {
     e.preventDefault();
     setIsOpen(false);
-    if (view !== 'home') {
-      setView('home');
-      setTimeout(() => {
-        const element = document.querySelector(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+    if (pathname !== '/') {
+      router.push('/' + id);
     } else {
       const element = document.querySelector(id);
       if (element) {

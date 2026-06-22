@@ -1,7 +1,9 @@
+"use client";
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Award, Flame, Leaf, BookOpen } from 'lucide-react';
 
-export default function Menu({ setView }) {
+export default function Menu() {
   const specialties = [
     {
       id: 1,
@@ -97,16 +99,13 @@ export default function Menu({ setView }) {
 
         {/* Look Menu CTA Button */}
         <div className="text-center">
-          <button
-            onClick={() => {
-              setView('menu');
-              window.scrollTo({ top: 0, behavior: 'instant' });
-            }}
+          <Link
+            href="/menu"
             className="inline-flex items-center gap-2 bg-transparent hover:bg-gold border-2 border-gold text-gold hover:text-primary-dark font-sans font-bold py-4 px-10 rounded-full text-sm tracking-wider transition-all duration-300 cursor-pointer shadow-[0_4px_20px_rgba(212,175,55,0.1)] hover:-translate-y-0.5"
           >
             <BookOpen className="w-4 h-4" />
             LOOK MENU
-          </button>
+          </Link>
         </div>
 
       </div>

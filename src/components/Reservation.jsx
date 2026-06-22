@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, Users, User, Phone, CheckCircle, Send, MessageSquare, Mail } from 'lucide-react';

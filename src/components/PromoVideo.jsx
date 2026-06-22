@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import { Play, X, Utensils, Award, ChefHat, Users } from 'lucide-react';
@@ -21,7 +22,7 @@ function AnimatedCounter({ value, suffix }) {
   }, [isInView, value]);
 
   return (
-    <span ref={ref} className="font-serif text-4xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gold transition-colors duration-300">
+    <span ref={ref} className="font-sans text-4xl sm:text-5xl font-light text-white tracking-wide group-hover:text-gold transition-colors duration-300">
       {count.toLocaleString()}{suffix}
     </span>
   );
