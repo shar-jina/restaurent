@@ -71,8 +71,8 @@ export default function Navbar() {
                 <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-white group-hover:text-gold transition-colors duration-300">
                   KANARY
                 </span>
-                <span className="text-[11px] tracking-[0.25em] text-gold uppercase -mt-1 font-sans">
-                  Restaurant
+                <span className="text-[22px] tracking-[0.25em] font-bold text-gold uppercase -mt-1 font-sans">
+                  GROUP RESTAURANTS
                 </span>
               </div>
             </a>

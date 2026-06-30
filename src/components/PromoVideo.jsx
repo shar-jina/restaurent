@@ -41,21 +41,14 @@ export default function PromoVideo() {
     },
     {
       id: 2,
-      count: 80,
+      count: 30,
       suffix: '+',
       label: 'Special Foods',
       icon: ChefHat,
     },
-    {
-      id: 3,
-      count: 12,
-      suffix: '+',
-      label: 'Awards Won',
-      icon: Award,
-    },
-    {
+   {
       id: 4,
-      count: 25,
+      count: 15,
       suffix: '+',
       label: 'Expert Chefs',
       icon: Users,
@@ -108,7 +101,7 @@ export default function PromoVideo() {
         </div>
 
         {/* Minimalist Stats Counters (No cards, flat horizontal layout) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 items-center justify-center max-w-4xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 md:gap-8 items-center justify-center max-w-3xl mx-auto">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -126,7 +119,7 @@ export default function PromoVideo() {
 
                 {/* Vertical Divider line on Desktop (except last item) */}
                 {index < stats.length - 1 && (
-                  <div className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-gold/20" />
+                  <div className="hidden md:block absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-gold/20" />
                 )}
               </div>
             );

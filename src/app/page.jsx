@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import About from '../components/About';
+import DocumentarySeries from '../components/DocumentarySeries';
 import Menu from '../components/Menu';
 import Gallery from '../components/Gallery';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -21,9 +22,17 @@ export default function HomePage() {
         <About />
       </section>
 
+      {/* Founder Documentary Series */}
+      <DocumentarySeries />
+
       {/* Menu Highlights Section */}
       <section id="menu">
         <Menu />
+      </section>
+
+      {/* Why Choose Us */}
+      <section id="why-us">
+        <WhyChooseUs />
       </section>
 
       {/* Visual Photo Gallery */}
@@ -31,10 +40,7 @@ export default function HomePage() {
         <Gallery />
       </section>
 
-      {/* Why Choose Us */}
-      <section id="why-us">
-        <WhyChooseUs />
-      </section>
+      
 
       {/* Video Showcase & Stats Count Panel */}
       <PromoVideo />

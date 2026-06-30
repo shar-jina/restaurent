@@ -1,12 +1,13 @@
 "use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Clock, Users, User, Phone, CheckCircle, Send, MessageSquare, Mail } from 'lucide-react';
+import { Calendar, Clock, Users, User, Phone, CheckCircle, Send, MessageSquare, Mail, MapPin } from 'lucide-react';
 
 export default function Reservation() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    branch: 'M.G. Road Branch',
     guests: '2',
     date: '',
     time: '19:00',
@@ -51,6 +52,7 @@ export default function Reservation() {
   const getWhatsAppLink = () => {
     const message = `*Kanary Restaurant Reservation Request*
 Reference: ${bookingRef}
+Branch: ${formData.branch}
 Name: ${formData.name}
 Phone: ${formData.phone}
 Guests: ${formData.guests}
@@ -59,7 +61,15 @@ Time: ${formData.time}
 Seating: ${formData.preference}
 Notes: ${formData.notes || 'None'}`;
     
-    return `https://wa.me/917045671111?text=${encodeURIComponent(message)}`;
+    // Route to the branch's specific phone number
+    let phoneNum = '917045671111'; // MG Road default
+    if (formData.branch === 'Ayyanthole Branch') {
+      phoneNum = '917045672222';
+    } else if (formData.branch === 'Koorkenchery Branch') {
+      phoneNum = '917045673333';
+    }
+    
+    return `https://wa.me/${phoneNum}?text=${encodeURIComponent(message)}`;
   };
 
   // Generate pre-filled Mailto link
@@ -68,6 +78,7 @@ Notes: ${formData.notes || 'None'}`;
     const body = `Kanary Restaurant Reservation Details:
 ------------------------------------------
 Reference Code: ${bookingRef}
+Selected Branch: ${formData.branch}
 Guest Name: ${formData.name}
 Phone Number: ${formData.phone}
 Number of Guests: ${formData.guests}
@@ -83,6 +94,7 @@ Special Notes: ${formData.notes || 'None'}`;
     setFormData({
       name: '',
       phone: '',
+      branch: 'M.G. Road Branch',
       guests: '2',
       date: '',
       time: '19:00',
@@ -174,6 +186,25 @@ Special Notes: ${formData.notes || 'None'}`;
                   className="space-y-6"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Branch Selector (Full Width) */}
+                    <div className="space-y-2 sm:col-span-2">
+                      <label htmlFor="branch" className="text-xs font-bold uppercase tracking-wider text-gray-300 flex items-center gap-2">
+                        <MapPin className="w-3.5 h-3.5 text-gold" /> Select Restaurant Branch *
+                      </label>
+                      <select
+                        id="branch"
+                        name="branch"
+                        required
+                        value={formData.branch}
+                        onChange={handleChange}
+                        className="w-full bg-primary-dark/80 border border-gold/20 rounded-xl px-4 py-3 text-white font-sans text-sm focus:outline-none focus:border-gold transition-colors"
+                      >
+                        <option value="M.G. Road Branch">M.G. Road Branch (MG Road)</option>
+                        <option value="Ayyanthole Branch">Ayyanthole Branch (Civil Line Link Road)</option>
+                        <option value="Koorkenchery Branch">Koorkenchery Branch (AVM Tower)</option>
+                      </select>
+                    </div>
+
                     {/* Name */}
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-gray-300 flex items-center gap-2">

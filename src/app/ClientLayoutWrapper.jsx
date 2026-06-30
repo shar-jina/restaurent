@@ -6,6 +6,8 @@ import Preloader from '../components/Preloader';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+import FloatingOrderSidebar from '../components/FloatingOrderSidebar';
+
 export default function ClientLayoutWrapper({ children }) {
   const [loading, setLoading] = useState(true);
 
@@ -23,6 +25,7 @@ export default function ClientLayoutWrapper({ children }) {
       </AnimatePresence>
       <Navbar />
       {children}
+      {!loading && <FloatingOrderSidebar />}
       <Footer />
     </div>
   );
