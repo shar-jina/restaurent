@@ -21,6 +21,11 @@ export default function HomePage() {
       <section id="about">
         <About />
       </section>
+      {/* Why Choose Us */}
+      <section id="why-us">
+        <WhyChooseUs />
+      </section>
+
 
       {/* Founder Documentary Series */}
       <DocumentarySeries />
@@ -30,15 +35,8 @@ export default function HomePage() {
         <Menu />
       </section>
 
-      {/* Why Choose Us */}
-      <section id="why-us">
-        <WhyChooseUs />
-      </section>
-
-      {/* Visual Photo Gallery */}
-      <section id="gallery">
-        <Gallery />
-      </section>
+      
+      
 
       
 
@@ -48,6 +46,11 @@ export default function HomePage() {
       {/* Testimonials Carousel */}
       <section id="reviews">
         <Reviews />
+      </section>
+
+      {/* Visual Photo Gallery */}
+      <section id="gallery">
+        <Gallery />
       </section>
 
       {/* Reservation Panel */}

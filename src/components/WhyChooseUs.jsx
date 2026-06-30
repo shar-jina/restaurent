@@ -46,9 +46,15 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section id="why-us" className="py-24 bg-primary-dark/30 relative">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-gold/5 rounded-full filter blur-[120px] pointer-events-none" />
+    <section 
+      id="why-us" 
+      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ backgroundImage: "url('/images/dining_experience.png')" }}
+    >
+      {/* Heavy dark luxury overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/85 via-primary-bg/50 to-primary-bg/85 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
